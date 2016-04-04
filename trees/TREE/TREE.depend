@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1458485707 source:e:\abc\iterative_preorder_tree.cpp
+	<iostream>
+	<stack>
+	"bin_tree.h"
+	<cstdlib>
+
+1458483074 e:\abc\bin_tree.h
+
+1458486496 source:e:\abc\pretty_print_tree.c
+	<stdio.h>
+	"bin_tree.h"
+
+1458832227 source:e:\abc\iterative_inorder_tree.cpp
+	<iostream>
+	<stack>
+	"bin_tree.h"
+	<cstdlib>
+
+1459689842 source:e:\abc\level_order_insetion.cpp
+	<iostream>
+	<queue>
+	"bin_tree.h"
+	<cstdlib>
+
