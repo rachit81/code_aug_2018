@@ -6,6 +6,7 @@ typedef struct Tnode
   int data;
   struct Tnode *left;
   struct Tnode *right;
+  struct Tnode *next; // Only for inorder traversal
 }Tnode;
 
 

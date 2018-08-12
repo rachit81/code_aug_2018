@@ -46,7 +46,7 @@ void bitPrint(unsigned int num)
 int main()
 {
  //unsigned int num = 3003121869;
- unsigned int num = 300312185;
+ unsigned int num = 73;
  bitPrint(num);
 
  printf("=============================== \n\n");

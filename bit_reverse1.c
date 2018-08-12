@@ -1,42 +1,52 @@
 #include <stdio.h>
-
-void bitPrint(unsigned int num);
-
-void bitReverse1(unsigned int num,int rot)
+#define IS_CHAR(c) ((c >= 'a') && (c <= 'z')) || ((c >= 'A') && (c <= 'Z'))
+int strcomp(char *str1,char *str2)
 {
-  
-  unsigned int mask = ~(~0<<rot) ;
-  
-  num = (num>>rot) | ((num & mask) <<((sizeof(unsigned int)<<3) -rot));
-    
+    int index =0;
+     unsigned char mask = 1<<5;
+    mask= ~mask;
 
-  bitPrint(num);
-}
+    if ((IS_CHAR(str1[index])))
+        {
 
+        }
 
-void bitPrint(unsigned int num)
-{
-  unsigned int mask =0;
-  mask = ~((~mask)>>1);
-  printf( "\n %lu \n The bit reverse number is \n",mask);  
-  while(mask !=0)
-  { 
-    if (mask & num)
-    { 
-      printf("1");
-    }else{
-      printf("0");
+    while(1)
+    {
+        if ((IS_CHAR(str1[index])) && (IS_CHAR(str2[index])) )
+        {
+                printf("BOTH ARE CHARACTER :-) %d \n",index);
+            if ((str1[index] & mask) != (str2[index] & mask))
+            {
+                printf("%c %c %d \n ",str1[index],str2[index],index);
+                break;
+            }
+        }
+        else if (str1[index] != str2[index])
+        {
+             printf("2 %c %c %d \n ",str1[index],str2[index],index);
+            break;
+        }
+        else if (str1[index] == '\0' || str2[index] == '\0')
+        {
+             printf("END  %c %c %d \n ",str1[index],str2[index],index);
+            break;
+        }
+        index++;
     }
-    mask =mask>>1;
-  }
-      printf("\n\n");
-}
 
+    if (str1[index] == str2[index])
+        return 0;
+    else if (str1[index] < str2[index])
+        return -1;
+    else
+        return 1;
+}
 int main()
 {
-  unsigned int num = 1997;
-  bitPrint(num);
-  bitReverse1(num,4);
+    int status;
+    status =strcomp("rachit~","RAchiT^");
+    printf("status is %d \n",status);
 }
 
 
