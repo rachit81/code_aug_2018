@@ -90,19 +90,16 @@ int insertionSort(int a[],int n)
         a[j+1] = temp;
 
     }
-
-
-
 }
-
 /*****Insertion Sort ****/
 
 /***** Merge Sort ********/
 int temp1[50];
 int temp2[50];
-int merge(int arr[],int low1,int low2, int high1, int high2)
+
+int merge(int arr[],int low1,int high1, int low2,int high2)
 {
-    int i =0,j=0;
+    int i =0,j=0,k=0;
 
     for (i=0;i<high1-low1;i++)
     {
@@ -112,17 +109,31 @@ int merge(int arr[],int low1,int low2, int high1, int high2)
     {
         temp2[j] = arr[low2+j];
     }
-    i=0;j=0;
+    i=0;j=0;k=0;
 
-    while (i<(high1-low1) && j < (high2-low2))
+    while ((i<(high1-low1)) && (j < (high2-low2)))
     {
         if (temp1[i] < temp2[j])
         {
-
+            arr[low1+k] = temp1[i];
+            i++;
+        }else
+        {
+            arr[low1+k] = temp2[j];
+            j++;
         }
-
+        k++;
     }
-
+    while (i<(high1-low1))
+    {
+        arr[low1+k] = temp1[i];
+        i++;k++;
+    }
+    while(j < (high2-low2))
+    {
+        arr[low1+k] = temp2[j];
+        j++;k++;
+    }
 }
 
 
@@ -138,9 +149,6 @@ int MergeSort(int arr[], int low, int high)
     merge(arr,low,mid,mid+1,high);
 
 }
-
-
-
 /***** Merge Sort ********/
 
 int main()
@@ -155,9 +163,9 @@ int main()
   {
       printf("%d ",arr[i]);
   }
-  printf("\n\n");
-     insertionSort(arr,10);
-
+  printf("\n Merge sorting...\n");
+//     insertionSort(arr,10);
+    MergeSort(arr,0,10);
 
   for(i=0;i<n;i++)
   {
