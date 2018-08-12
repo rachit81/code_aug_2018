@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1458486496 source:e:\rachit_program\pretty_print_tree.c
+	<stdio.h>
+	"bin_tree.h"
+
+1515075855 e:\rachit_program\bin_tree.h
+
+1517841254 source:e:\rachit_program\tree_preorder.c
+	"bin_tree.h"
+	<stdio.h>
+	<limits.h>
+
