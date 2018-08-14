@@ -101,17 +101,17 @@ int merge(int arr[],int low1,int high1, int low2,int high2)
 {
     int i =0,j=0,k=0;
 
-    for (i=0;i<high1-low1;i++)
+    for (i=0;i<high1-low1+1;i++)
     {
         temp1[i] = arr[low1+i];
     }
-    for (j=0;j<high2-low2;j++)
+    for (j=0;j<high2-low2+1;j++)
     {
         temp2[j] = arr[low2+j];
     }
     i=0;j=0;k=0;
 
-    while ((i<(high1-low1)) && (j < (high2-low2)))
+    while ((i<(high1-low1+1)) && (j < (high2-low2+1)))
     {
         if (temp1[i] < temp2[j])
         {
@@ -124,12 +124,12 @@ int merge(int arr[],int low1,int high1, int low2,int high2)
         }
         k++;
     }
-    while (i<(high1-low1))
+    while (i<(high1-low1+1))
     {
         arr[low1+k] = temp1[i];
         i++;k++;
     }
-    while(j < (high2-low2))
+    while(j < (high2-low2+1))
     {
         arr[low1+k] = temp2[j];
         j++;k++;
@@ -165,10 +165,11 @@ int main()
   }
   printf("\n Merge sorting...\n");
 //     insertionSort(arr,10);
-    MergeSort(arr,0,10);
+    MergeSort(arr,0,9);
 
   for(i=0;i<n;i++)
   {
       printf("%d ",arr[i]);
   }
+  //printf("%d \n",n);
 }
