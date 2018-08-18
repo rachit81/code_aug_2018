@@ -151,6 +151,41 @@ int MergeSort(int arr[], int low, int high)
 }
 /***** Merge Sort ********/
 
+/******QuickSort *********/
+
+int partition(int arr[],int low,int high)
+{
+    int pivot = arr[high];
+    int  temp, l, r;
+    l= low;r =high-1;
+    while ( l < r )
+    {
+        while (arr[l] < pivot)
+            l++;
+        if (l>=high)
+            break;
+        while ((arr[r] >= pivot) && (r>=low))
+            r--;
+        if (r < low)
+            break;
+
+         temp = arr[l];
+         arr[l]= arr[r];
+         arr[r] = temp;
+         l++;r--;
+    }
+         arr[high]= arr[r];
+         arr[r] = pivot;
+}
+
+
+int QuickSort(int arr[], int low, int high)
+{
+
+}
+
+/******QuickSort *********/
+
 int main()
 {
     int i=0;
@@ -165,7 +200,10 @@ int main()
   }
   printf("\n Merge sorting...\n");
 //     insertionSort(arr,10);
-    MergeSort(arr,0,9);
+   // MergeSort(arr,0,9);
+
+
+   partition(arr,0,9);
 
   for(i=0;i<n;i++)
   {
