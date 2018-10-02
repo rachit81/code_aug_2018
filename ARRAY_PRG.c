@@ -6,7 +6,15 @@ void printArr(int arr[],int num)
     int i=0;
     for (i=0;i<num;i++)
         printf("%d ",arr[i]);
+    printf("\n\n\n");
 }
+
+
+int getPivot(int arr[],int num)
+{
+
+}
+
 /****Program to cyclically rotate an array by one****/
 
 void cyclicRotateOne(int arr[],int num)
@@ -29,6 +37,8 @@ int main()
 {
     int arr[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
     cyclicRotateOne(arr,15);
- cyclicRotateOne(arr,15);
+    cyclicRotateOne(arr,15);
+    cyclicRotateOne(arr,15);
+    cyclicRotateOne(arr,15);
 
 }
